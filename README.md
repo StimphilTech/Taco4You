@@ -2,9 +2,11 @@ Taco4You
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+This Point of sale application will automate the order process of the Taco4You Shop. This will assist with managing large amounts of orders. This way the business can handle more customers and the orders can be made at a faster pace. 
 
-![Class Diagram](path/to/your/class_diagram.png)
+
+<img width="3238" height="1703" alt="Taco4You(capstone 2)" src="https://github.com/user-attachments/assets/30513588-02d4-4157-9a4e-2f705795ad01" />
+
 
 ## User Stories
 
@@ -59,13 +61,13 @@ List resources such as tutorials, articles, or documentation that helped you dur
 - [Effective Java](https://www.example.com)
 
 ## Team Members
+- 
 
 
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
 
 - Thank you to Raymond for continuous support and guidance.
-- A special thanks to all Peers for your dedication and teamwork.
+- A special thanks to all Peers and tutors for your dedication and teamwork.
  
