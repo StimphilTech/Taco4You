@@ -5,7 +5,7 @@ Taco4You
 This Point of sale application will automate the order process of the Taco4You Shop. This will assist with managing large amounts of orders. This way the business can handle more customers and the orders can be made at a faster pace. 
 
 
-<img width="3238" height="1703" alt="Taco4You(capstone 2)" src="https://github.com/user-attachments/assets/30513588-02d4-4157-9a4e-2f705795ad01" />
+<img width="3238" height="1703" alt="Taco4You(capstone 2)" src="https://github.com/user-attachments/assets/59927d21-fbfd-48d2-a52a-fcbacb349167" />
 
 
 ## User Stories
