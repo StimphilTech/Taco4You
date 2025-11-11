@@ -19,6 +19,10 @@ public abstract class Topping {
         return price;
     }
 
+    public boolean getExtra() {
+        return extra;
+    }
+
     @Override
     public String toString() {
         return "Topping{" +

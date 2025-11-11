@@ -5,13 +5,15 @@ import java.util.List;
 public class Taco {
     private String size;
    private String shellType;
-    private List<Topping> Toppings;
+    private List<PremiumTopping> toppingsp;
+    private List<RegularTopping> toppingsr;
     private boolean deepfried;
 
-    public Taco(String size, String shellType, List<Topping> toppings, boolean deepfried) {
+    public Taco(String size, String shellType, List<PremiumTopping> toppingsp,List<RegularTopping> toppingsr, boolean deepfried) {
         this.size = size;
         this.shellType = shellType;
-        Toppings = toppings;
+        this.toppingsp = toppingsp;
+        this.toppingsr = toppingsr;
         this.deepfried = deepfried;
     }
 
@@ -31,12 +33,20 @@ public class Taco {
         this.shellType = shellType;
     }
 
-    public List<Topping> getToppings() {
-        return Toppings;
+    public List<PremiumTopping> getToppingsp() {
+        return toppingsp;
     }
 
-    public void setToppings(List<Topping> toppings) {
-        Toppings = toppings;
+    public void setToppingsp(List<PremiumTopping> toppingsp) {
+        this.toppingsp = toppingsp;
+    }
+
+    public List<RegularTopping> getToppingsr() {
+        return toppingsr;
+    }
+
+    public void setToppingsr(List<RegularTopping> toppingsr) {
+        this.toppingsr = toppingsr;
     }
 
     public boolean isDeepfried() {
@@ -53,11 +63,15 @@ public class Taco {
 
     @Override
     public String toString() {
-        return "Taco{" +
-                "size='" + size + '\'' +
-                ", shellType='" + shellType + '\'' +
-                ", Toppings=" + Toppings +
-                ", deepfried=" + deepfried +
-                '}';
-    }
-}
+//        return "Taco{" +
+//                "size='" + size + '\'' +
+//                ", shellType='" + shellType + '\'' +
+//                ", Toppings=" + Toppings +
+//                ", deepfried=" + deepfried +
+//                '}';
+//    }
+
+    return size+"|"+shellType+"|"+toppingsp+"|"+toppingsr+"|"+deepfried+"|";
+
+
+}}
