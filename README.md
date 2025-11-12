@@ -11,6 +11,13 @@ This Point of sale application will automate the order process of the Taco4You S
 
 List the user stories that guided the development of your application. Format these stories as: 
 
+- As a developer, I want customers to be able to order a taco so they can select which size they want.
+  
+- As a developer, I want customers to select toppings so order can be categorized.
+  
+- As a developer, I want customers to be able to order 0 tacos on the order so they must purchase chips & salsa.
+  
+- As a developer, I want customers order to be completed so it can be saved to a receipts folder.
 
 
 ## Setup
@@ -55,17 +62,17 @@ Outline potential future enhancements or functionalities you might consider addi
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
-
-## Team Members
-- 
+- [Beginners Book](https://beginnersbook.com/2017/08/comparable-interface-in-java-with-example/)
+- [Beginners Book](https://beginnersbook.com/2017/08/comparable-interface-in-java-with-example/)
 
 
+# Team Member
+Individual Project by Monalisa Stimphil
 
-## Thanks
+
+## Special Thanks
 
 
 - Thank you to Raymond for continuous support and guidance.
-- A special thanks to all Peers and tutors for your dedication and teamwork.
+- A special thanks to all Peers and tutors for support. 
  
