@@ -5,15 +5,20 @@ Taco4You
 This Point of sale application will automate the order process of the Taco4You Shop. This will assist with managing large amounts of orders. This way the business can handle more customers and the orders can be made at a faster pace. 
 
 
-<img width="3238" height="1703" alt="Taco4You(capstone 2)" src="https://github.com/user-attachments/assets/59927d21-fbfd-48d2-a52a-fcbacb349167" />
-
+<img width="3238" height="1703" alt="Taco4You(capstone 2)(1)" src="https://github.com/user-attachments/assets/9adf35a8-b316-4f1f-89a3-043c03f63f45" />
 
 ## User Stories
 
 List the user stories that guided the development of your application. Format these stories as: 
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a developer, I want customers to be able to order a taco so they can select which size they want.
+  
+- As a developer, I want customers to select toppings so order can be categorized.
+  
+- As a developer, I want customers to be able to order 0 tacos on the order so they must purchase chips & salsa.
+  
+- As a developer, I want customers order to be completed so it can be saved to a receipts folder.
+
 
 ## Setup
 
@@ -57,17 +62,17 @@ Outline potential future enhancements or functionalities you might consider addi
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
-
-## Team Members
-- 
+- [Beginners Book](https://beginnersbook.com/2017/08/comparable-interface-in-java-with-example/)
+- [Beginners Book](https://beginnersbook.com/2017/08/comparable-interface-in-java-with-example/)
 
 
+# Team Member
+Individual Project by Monalisa Stimphil
 
-## Thanks
+
+## Special Thanks
 
 
 - Thank you to Raymond for continuous support and guidance.
-- A special thanks to all Peers and tutors for your dedication and teamwork.
+- A special thanks to all Peers and tutors for support. 
  
