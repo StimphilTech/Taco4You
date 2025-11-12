@@ -1,8 +1,7 @@
 package com.pluralsight;
 
-public class RegularTopping extends Topping {
-
-    public RegularTopping(String name) {
+public class Side extends Topping {
+    public Side(String name) {
         super(name);
     }
 
@@ -10,6 +9,8 @@ public class RegularTopping extends Topping {
     public double getPrice(String size) {
         return 0;
     }
-
-
 }
+
+
+
+

@@ -1,28 +1,28 @@
 package com.pluralsight;
 
-public class Meats extends PremiumTopping {
+public class Meat extends PremiumTopping {
 
-    public Meats(String name, double price, boolean extra) {
-        super(name, price, extra);
+    public Meat(String name, boolean extra) {
+        super(name, extra);
     }
 
     public double getPrice(String size) {
         switch (size) {
 
             case "single":
-                if (getExtra() == true) {
+                if (getExtra()) {
                     return 1.50;
                 }else {
                     return 1;
                 }
             case "3taco":
-                if (getExtra() == true) {
+                if (getExtra()) {
                     return 3;
                 }else {
                     return 2;
                 }
             case "burrito":
-                if (getExtra() == true) {
+                if (getExtra()) {
                     return 4.50;
                 }else {
                     return 3;

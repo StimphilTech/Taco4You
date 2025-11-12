@@ -1,19 +1,18 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Taco {
     private String size;
-   private String shellType;
-    private List<PremiumTopping> toppingsp;
-    private List<RegularTopping> toppingsr;
+    private String shellType;
+    private List<Topping> toppings;
     private boolean deepfried;
 
-    public Taco(String size, String shellType, List<PremiumTopping> toppingsp,List<RegularTopping> toppingsr, boolean deepfried) {
+    public Taco(String size, String shellType, List<Topping> toppings, boolean deepfried) {
         this.size = size;
         this.shellType = shellType;
-        this.toppingsp = toppingsp;
-        this.toppingsr = toppingsr;
+        this.toppings = new ArrayList<>();
         this.deepfried = deepfried;
     }
 
@@ -33,20 +32,12 @@ public class Taco {
         this.shellType = shellType;
     }
 
-    public List<PremiumTopping> getToppingsp() {
-        return toppingsp;
+    public List<Topping> getToppings() {
+        return toppings;
     }
 
-    public void setToppingsp(List<PremiumTopping> toppingsp) {
-        this.toppingsp = toppingsp;
-    }
-
-    public List<RegularTopping> getToppingsr() {
-        return toppingsr;
-    }
-
-    public void setToppingsr(List<RegularTopping> toppingsr) {
-        this.toppingsr = toppingsr;
+    public void setToppings(List<Topping> toppings) {
+        this.toppings = toppings;
     }
 
     public boolean isDeepfried() {
@@ -57,7 +48,7 @@ public class Taco {
         this.deepfried = deepfried;
     }
 
-    public double calculatePrice(){
+    public double calculatePrice() {
         return 0;
     }
 
@@ -71,7 +62,8 @@ public class Taco {
 //                '}';
 //    }
 
-    return size+"|"+shellType+"|"+toppingsp+"|"+toppingsr+"|"+deepfried+"|";
+        return size + "|" + shellType + "|" + toppings + "|" + deepfried + "|";
 
 
-}}
+    }
+}

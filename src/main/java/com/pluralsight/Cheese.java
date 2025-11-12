@@ -1,9 +1,8 @@
 package com.pluralsight;
 
 public class Cheese extends PremiumTopping{
-
-    public Cheese(String name, double price, boolean extra) {
-        super(name, price, extra);
+    public Cheese(String name, boolean extra) {
+        super(name, extra);
     }
 
     public double getPrice(String size) {

@@ -1,7 +1,8 @@
 package com.pluralsight;
 
 public class UserInterface {
-    private currentOrder Order;
+    private static Order currentOrder;
+
     public static void main(String[] args) {
 
 
@@ -11,6 +12,4 @@ public class UserInterface {
 
     }
 
-    private class currentOrder {
-    }
 }

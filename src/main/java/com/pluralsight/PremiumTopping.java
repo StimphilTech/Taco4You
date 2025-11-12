@@ -1,33 +1,27 @@
 package com.pluralsight;
 
-public abstract class PremiumTopping  {
-    private String name;
-    private double price;
+public abstract class PremiumTopping extends  Topping  {
+
     private boolean extra;
 
-    public PremiumTopping( String name, double price, boolean extra) {
-        this.name = name;
-        this.price = price;
+    public PremiumTopping(String name, boolean extra) {
+        super(name);
         this.extra = extra;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public double getPrice( String size) {
-        return price;
-    }
+
+    public abstract double getPrice( String size);
 
     public boolean getExtra() {
         return extra;
     }
 
 
+    @Override
     public String toString() {
-        return "Topping{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
+        return "PremiumTopping{" +
+                "extra=" + extra +
                 '}';
     }
 }
