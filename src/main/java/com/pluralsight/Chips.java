@@ -1,17 +1,17 @@
 package com.pluralsight;
 
-public class Chips extends Topping {
-    public Chips(String name) {
-        super(name);
+import java.util.List;
+
+public class Chips extends Taco {
+    public Chips(String size, String shellType, List<Topping> toppings, boolean deepfried) {
+        super(size, shellType, toppings, deepfried);
     }
 
-    @Override
+
     public double getPrice(String size) {
         return 1.50;
     }
 
-//    public double getPrice() {
-//        return 1.50 ;
-//    }
+
 }
 
