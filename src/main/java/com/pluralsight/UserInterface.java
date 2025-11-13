@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,7 +35,7 @@ public class UserInterface {
             scanner.nextLine();            // remove the newline that nextInt leaves
 
             switch (choice) {
-                case 1 -> displayTopping();
+                case 1 -> displayTopping(toppings,cart, scanner);
                 case 2 -> displayOrder();
                 case 3 -> System.out.println("Thank you for shopping with Taco4You \uD83C\uDF2E❤\uFE0F!");
                 default -> System.out.println("If you are finished with your order please select 3 to exit.  ");
@@ -41,15 +44,57 @@ public class UserInterface {
         scanner.close();
     }
 
-    private static void currentOrder(String s, ArrayList<Topping> toppings) {
+    private static void currentOrder(String fileName, ArrayList<Topping> toppings) {
+        try {
+
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split("\\|");       // split on the pipe symbol
+                Topping topping = new Topping(
+                        fields[0]                         // id
+                        // name
+                        // price
+                ) {
+                    @Override
+                    public double getPrice(String size) {
+                        return 0;
+                    }
+                };
+                toppings.add(topping);
+
+            }
+            reader.close();
+            System.out.println("printed " + toppings.size() + " order.");
+        } catch (IOException e) {
+            System.out.println("Error printing order: " + e.getMessage());
+        }
+    }
+
+    private static void displayTopping (ArrayList<Topping> toppings, ArrayList<Topping> cart, Scanner scanner) {
+
+        System.out.println("\nTacos");
+        System.out.println("--------");
+        for (Topping t : toppings) {
+            System.out.printf("%s", t.getName());
         }
 
-    private static void displayTopping() {
+
     }
 
     private static void displayOrder() {
 
     }
+
+    public void display() {
+
+
+    }
+}
+
+
+
+
 
     ////                    order.getChips().add(chips);
     //                    System.out.println("Added chips & salsa to order!");
@@ -106,11 +151,6 @@ public class UserInterface {
     //        return taco;
     //    }
 
-                public void display () {
-
-
-                }
-}
 
 //    public void start() {
 //        boolean running = true;
