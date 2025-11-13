@@ -9,7 +9,10 @@ public class Order {
     private List<Chips> chips;
     private LocalDateTime orderTime;
 
-   public double calculateTotal(){
+    public Order() {
+    }
+
+    public double calculateTotal(){
 
 
        return 0;
