@@ -74,13 +74,14 @@ public class Order {
     }
 
 
-    public void addDrink(Drink drink) {
-    }
 
     public void addChips(Chips chips) {
     }
 
     public void addTaco(Taco taco) {
+    }
+
+    public void addDrink(String size) {
     }
 }
 

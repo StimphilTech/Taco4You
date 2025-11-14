@@ -116,20 +116,55 @@ public class UserInterface {
                 break; // Exit the loop if valid input is received
             } else {
                 System.out.println("Invalid size. Please enter small, medium, or large.");
-            }
-        }
 
-        // 2. Get Flavor (happens only after the size loop breaks)
+                String flavor = "";
+                while (true) { // Loop until a valid flavor option is chosen
+                    System.out.println("Select drink flavor:");
+                    System.out.println("1) Cola");
+                    System.out.println("2) Lemonade");
+                    System.out.println("3) Root Beer");
+                    System.out.print("Enter your choice (1-3): ");
+
+                    if (!scanner.hasNextInt()) {
+                        System.out.println("Invalid input. Please enter a number (1-3).");
+                        scanner.nextLine(); // Discard the bad input
+                        continue; // Restart the flavor selection loop
+                    }
+                    int flavorChoice = scanner.nextInt();
+                    scanner.nextLine(); // Consume the leftover newline character
+
+                    switch (flavorChoice) {
+                        case 1:
+                            flavor = "Cola";
+                            break;
+                        case 2:
+                            flavor = "Lemonade";
+                            break;
+                        case 3:
+                            flavor = "Root Beer";
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please select 1, 2, or 3.");
+                            continue; // Restart the loop if default is hit
+                    }
+
+                    // If we reach here, a valid flavor was selected, so break the flavor loop
+                    break;
+                }
+            }
+
         System.out.print("Enter drink flavor: ");
         String flavor = scanner.nextLine();
         Drink drink = new Drink(size, flavor);
 
-        // FIX: Ensure currentOrder is initialized (see step 2 below)
-        if (currentOrder != null) {
-            currentOrder.addDrink(drink);
-            System.out.println(flavor + " " + size + " drink added! Price: $" + drink.getPrice());
-        } else {
-            System.out.println("Error: No active order to add drink to.");
+
+            if (currentOrder != null) {
+                currentOrder.addDrink(size);
+            currentOrder.addDrink(drink.toString());
+            System.out.println(flavor + " " + size + " drink added! Price: $" );
+            } else {
+                System.out.println("Error: No active order to add drink to.");
+            }
         }
     }
 
