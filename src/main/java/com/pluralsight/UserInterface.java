@@ -1,8 +1,5 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,14 +18,13 @@ public class UserInterface {
             System.out.println("1. Make Your Order");
             System.out.println("0. Exit");
             System.out.print("If you are finished with your order, please select 0 to exit.  ");
-            /* Accept only 1, 2, or 3.  Any text input is rejected. */
             if (!scanner.hasNextInt()) {
                 System.out.println("Please enter 0 to Exit the Order.");
-                scanner.nextLine();        // discard the bad token
-                continue;                  // restart the loop
+                scanner.nextLine();
+                continue;
             }
             choice = scanner.nextInt();
-            scanner.nextLine();            // remove the newline that nextInt leaves
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> display();
@@ -41,15 +37,84 @@ public class UserInterface {
 
 
     private static void display() {
+        Scanner scanner = new Scanner(System.in);
+
 
         System.out.println("\nTacos");
         System.out.println("--------");
-//        for (Topping t : cart) {
-//            System.out.printf("%s", t.getName());
+
+        boolean quit = false;
+        while (!quit) {
+            System.out.println("---------- Order Screen ----------");
+            System.out.println("1) Add Taco");
+            System.out.println("2) Add Drink");
+            System.out.println("3) Add Chips & Salsa");
+            System.out.println("4) Checkout");
+            System.out.println("0) Cancel Order");
+            System.out.print("Enter your choice: 0-4 ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    addTaco(scanner);
+                    break;
+                case "2":
+                    addDrink(scanner);
+                    break;
+                case "3":
+                    addChips(scanner);
+                    break;
+                case "4":
+                    checkout(scanner);
+                    break;
+                case "0":
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+
+            }
+
+
         }
 
+    public static void addTaco(Scanner scanner){
+        System.out.println("Choose Taco Size (Single/3-Taco/Burrito: ");
+        String size = scanner.nextLine();
+
+        System.out.println("Choose Shell Type (Soft/Hard: ");
+        String shellType = scanner.nextLine();
+
+        System.out.println("Do you want it deep fried? (yes/no)");
+        boolean deepFried = scanner.nextLine().equalsIgnoreCase("yes");
+
+        Taco taco = new Taco(size, shellType, deepFried);
+
+        System.out.println("Add toppings");
+        String toppingInput;
+
+        do{
+            System.out.println("Enter a topping (Cheese, Lettuce, Tomato");
+            toppingInput = scanner.nextLine();
+            if (!toppingInput.equalsIgnoreCase ("finished")) {
+                taco.addTopping(new Topping(toppingInput) {
+                    @Override
+                    public double getPrice(String size) {
+                        return 0;
+                    }
+                });
+
+            } while (!toppingInput.equalsIgnoreCase("finished"));
+
+            currentOrder.addTaco(taco);
+            System.out.println("Taco added! Price: $" +taco.calculatePrice());
+        }
 
     }
+}
+
+
 
 
 //    private static void displayOrder() {
@@ -150,7 +215,7 @@ public class UserInterface {
 
 //    private void NewOrder() {
 //        Order currentOrder = new Order(new ArrayList<Topping>());
-
+//
 //        boolean ordering = true;
 //        while (ordering) {
 //            System.out.println("\n--- ORDER MENU ---");
@@ -162,16 +227,16 @@ public class UserInterface {
 //            System.out.print("Choose an option: ");
 //
 //            String choice = scanner.nextLine();
-
+//
 //            switch (choice) {
 //                case "1":
 //                    Taco taco = buildTaco();
-////                    order.getTacos().add(taco);
+//                    order.getTacos().add(taco);
 //                    System.out.println("Added taco to order!");
 //                    break;
 //                case "2":
 //                    Drink drink = new Drink("Medium", 2.50); // placeholder
-////                    order.getDrinks().add(drink);
+//                    order.getDrinks().add(drink);
 //                    System.out.println("Added drink to order!");
 //                    break;
 //                case "3":
