@@ -10,12 +10,14 @@ public class Order {
     private List<Chips> chips;
     private LocalDateTime orderTime;
 
-    public Order(LocalDateTime orderTime) {
+    public Order() {
         this.tacos = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
         this.orderTime = orderTime;
     }
+
+
 
     public double calculateTotal() {
 
@@ -72,6 +74,14 @@ public class Order {
     }
 
 
+    public void addDrink(Drink drink) {
+    }
+
+    public void addChips(Chips chips) {
+    }
+
+    public void addTaco(Taco taco) {
+    }
 }
 
 
