@@ -2,13 +2,12 @@ package com.pluralsight;
 
 import java.util.List;
 
-public class Drink extends Taco {
+public class Drink {
     private String size;
     private String flavor;
 
-    public Drink(String size, String shellType, List<Topping> toppings, boolean deepfried, String size1, String flavor) {
-        super(size, shellType, toppings, deepfried);
-        this.size = size1;
+    public Drink(String size, String flavor) {
+        this.size = size;
         this.flavor = flavor;
     }
 

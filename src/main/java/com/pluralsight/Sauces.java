@@ -12,7 +12,7 @@ public class Sauces extends Topping {
 
     @Override
     public String toString() {
-        return "Sauces{}";
+        return "Sauces{"+ getName() +"}";
     }
 }
 

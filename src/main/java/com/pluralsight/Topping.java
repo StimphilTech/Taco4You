@@ -20,8 +20,4 @@ public abstract class Topping {
                 "name='" + name + '\'' +
                 '}';
     }
-
-    public void add(Topping toppings) {
-
-    }
 }

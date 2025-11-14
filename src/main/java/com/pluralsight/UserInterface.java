@@ -12,22 +12,18 @@ public class UserInterface {
     ;
 
     public static void main(String[] args) {
-        ArrayList<Topping> toppings = new ArrayList<>();
         ArrayList<Topping> cart = new ArrayList<>();
-
-        currentOrder("TACO_PRICING.csv", toppings);
 
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         while (choice != 3) {
             System.out.println("\nWelcome to Taco4You \uD83C\uDF2E❤\uFE0F!");
             System.out.println("1. Make Your Order");
-            System.out.println("2. Show Cart");
-            System.out.println("3. Exit");
-            System.out.print("If you are finished with your order please select 3 to exit.  ");
+            System.out.println("0. Exit");
+            System.out.print("If you are finished with your order, please select 0 to exit.  ");
             /* Accept only 1, 2, or 3.  Any text input is rejected. */
             if (!scanner.hasNextInt()) {
-                System.out.println("Please enter 1, 2, or 3.");
+                System.out.println("Please enter 0 to Exit the Order.");
                 scanner.nextLine();        // discard the bad token
                 continue;                  // restart the loop
             }
@@ -35,62 +31,36 @@ public class UserInterface {
             scanner.nextLine();            // remove the newline that nextInt leaves
 
             switch (choice) {
-                case 1 -> displayTopping(toppings,cart, scanner);
-                case 2 -> displayOrder();
-                case 3 -> System.out.println("Thank you for shopping with Taco4You \uD83C\uDF2E❤\uFE0F!");
-                default -> System.out.println("If you are finished with your order please select 3 to exit.  ");
+                case 1 -> display();
+                case 0 -> System.out.println("Thank you for shopping with Taco4You \uD83C\uDF2E❤\uFE0F!");
+                default -> System.out.println("If you are finished with your order please select 0 to exit.  ");
             }
         }
         scanner.close();
     }
 
-    private static void currentOrder(String fileName, ArrayList<Topping> toppings) {
-        try {
 
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] fields = line.split("\\|");       // split on the pipe symbol
-                Topping topping = new Topping(
-                        fields[0]                         // id
-                        // name
-                        // price
-                ) {
-                    @Override
-                    public double getPrice(String size) {
-                        return 0;
-                    }
-                };
-                toppings.add(topping);
-
-            }
-            reader.close();
-            System.out.println("printed " + toppings.size() + " order.");
-        } catch (IOException e) {
-            System.out.println("Error printing order: " + e.getMessage());
-        }
-    }
-
-    private static void displayTopping (ArrayList<Topping> toppings, ArrayList<Topping> cart, Scanner scanner) {
+    private static void display() {
 
         System.out.println("\nTacos");
         System.out.println("--------");
-        for (Topping t : toppings) {
-            System.out.printf("%s", t.getName());
+//        for (Topping t : cart) {
+//            System.out.printf("%s", t.getName());
         }
 
 
     }
 
-    private static void displayOrder() {
 
-    }
+//    private static void displayOrder() {
+//
+//    }
 
-    public void display() {
+//    public static void display() {
 
 
-    }
-}
+//    }
+
 
 
 

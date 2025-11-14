@@ -9,11 +9,15 @@ public class Taco {
     private List<Topping> toppings;
     private boolean deepfried;
 
-    public Taco(String size, String shellType, List<Topping> toppings, boolean deepfried) {
+    public Taco(String size, String shellType, boolean deepfried) {
         this.size = size;
         this.shellType = shellType;
         this.toppings = new ArrayList<>();
         this.deepfried = deepfried;
+    }
+
+    public void addTopping(Topping topping) {
+        toppings.add(topping);
     }
 
     public String getSize() {
@@ -49,20 +53,32 @@ public class Taco {
     }
 
     public double calculatePrice() {
-        return 0;
-    }
+        String normalizedSize = size.toLowerCase();
 
-    @Override
-    public String toString() {
+        switch (normalizedSize) {
+            case "single":
+                return 3.50;
+            case "3-taco":
+                return 9.00;
+            case "burrito":
+                return 8.50;
+            default:
+                // Handle unknown sizes
+                System.out.println("Error: Unknown size '" + size + "'");
+                return 0.0;
+        }
+
+//        @Override
+//        public String toString ()
 //        return "Taco{" +
 //                "size='" + size + '\'' +
 //                ", shellType='" + shellType + '\'' +
-//                ", Toppings=" + Toppings +
+//                ", Toppings=" + toppings +
 //                ", deepfried=" + deepfried +
 //                '}';
 //    }
 
-        return size + "|" + shellType + "|" + toppings + "|" + deepfried + "|";
+//        return size + "|" + shellType + "|" + toppings + "|" + deepfried + "|";
 
 
     }
